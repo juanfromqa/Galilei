@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="App:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/App_jar</output-path>
+    <root id="archive" name="App.jar">
+      <element id="module-output" name="App" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Otros/Librerias java/jfoenix-8.0.8.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

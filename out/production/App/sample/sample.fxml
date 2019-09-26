@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane fx:id="headerPanel" prefHeight="49.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Separator prefHeight="3.0" prefWidth="7.0" visible="false" />
+                  <ImageView fx:id="logoButton" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8-telescope.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="7.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="logoTextButton" fitHeight="50.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/galilei.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="12.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Separator prefHeight="2.0" prefWidth="341.0" visible="false" />
+                  <ImageView fx:id="infoButton" accessibleHelp="Información del programa" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#onInfoButtonClicked" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8-about_us_male.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="19.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Separator prefHeight="9.0" prefWidth="0.0" visible="false" />
+               </children>
+            </HBox>
+         </children></AnchorPane>
+      <AnchorPane fx:id="homePanel" layoutY="73.0" prefHeight="327.0" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="73.0">
+         <children>
+            <JFXTextField fx:id="urlTextField" alignment="CENTER" layoutX="19.0" layoutY="152.0" prefHeight="34.0" prefWidth="556.0" promptText="https://www.ejemplo.com/foo.php?id=1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="analyzerButton" buttonType="RAISED" layoutX="251.0" layoutY="519.0" onMouseClicked="#onAnalizerButtonClicked" style="-fx-background-color: green;" text="Analizar" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXCheckBox fx:id="booleanBasedCheckBox" layoutX="37.0" layoutY="284.0" selected="true" text="Ataque basado en booleanos">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXCheckBox>
+            <JFXCheckBox fx:id="errorBasedCheckBox" layoutX="37.0" layoutY="316.0" selected="true" text="Ataque basado en errores">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXCheckBox>
+            <Label layoutX="29.0" layoutY="244.0" text="Seleccione los ataques que desea incluír en este análisis">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <JFXCheckBox fx:id="unionBasedCheckBox" layoutX="38.0" layoutY="350.0" selected="true" text="Ataque basado en consultas 'UNION'">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXCheckBox>
+            <Label layoutX="14.0" layoutY="77.0" text="Ingrese la URL de su aplicación web:">
+               <font>
+                  <Font size="19.0" />
+               </font></Label>
+            <Label fx:id="txtUrlError" layoutX="191.0" layoutY="202.0" text="Ingrese una dirección válida" textFill="#e10000" visible="false">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <JFXCheckBox fx:id="stackedBasedCheckBox" layoutX="38.0" layoutY="383.0" selected="true" text="Ataque basado en consultas concatenadas">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="timeBasedCheckBox" layoutX="38.0" layoutY="416.0" selected="true" text="Ataque basado en tiempos de respuesta">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="inlineBasedCheckBox" layoutX="38.0" layoutY="449.0" selected="true" text="Ataques basado en consultas en línea">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXCheckBox>
+            <Label fx:id="txtUrlError2" layoutX="181.0" layoutY="488.0" text="Seleccione por lo menos una opción" textFill="#e10000" visible="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="resultadoPanel" layoutX="10.0" layoutY="73.0" prefHeight="323.0" prefWidth="600.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="73.0">
+         <children>
+            <Label layoutX="246.0" layoutY="7.0" text="Resultado">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+            <Separator layoutY="40.0" prefHeight="17.0" prefWidth="600.0" AnchorPane.bottomAnchor="528.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+            <JFXTextField fx:id="txtUrlAnalizada" alignment="CENTER" disable="true" editable="false" layoutX="33.0" layoutY="208.0" opacity="0.71" prefHeight="32.0" prefWidth="540.0" text="http://www.example.com/ex.php?ID=1" unFocusColor="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></JFXTextField>
+            <Label fx:id="txtDuracionDesc" layoutX="22.0" layoutY="485.0" text="Duración total del análisis:" />
+            <ImageView fx:id="imgVulnerable" fitHeight="100.0" fitWidth="120.0" layoutX="259.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="383.0" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="241.0" AnchorPane.topAnchor="102.0">
+               <image>
+                  <Image url="@images/icons8-high_risk.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgWarning" fitHeight="100.0" fitWidth="120.0" layoutX="259.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="383.0" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="241.0" AnchorPane.topAnchor="102.0">
+               <image>
+                  <Image url="@images/icons8-medium_risk.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="txtReporte1" alignment="CENTER" layoutX="17.0" layoutY="271.0" prefHeight="20.0" prefWidth="556.0" text="El sitio no se analizó por completo" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="txtDuracionTotal" layoutX="189.0" layoutY="485.0" text="00:09:00" />
+            <JFXButton buttonType="RAISED" layoutX="461.0" layoutY="530.0" onMouseClicked="#onInicioButtonClicked" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: grey;" text="Salir" textFill="WHITE" />
+            <JFXButton fx:id="btnGenerarReporte" buttonType="RAISED" layoutX="333.0" layoutY="530.0" onMouseClicked="#onGenerarReporteButtonClicked" style="-fx-background-color: green;" text="Generar reporte" textFill="WHITE" />
+            <ImageView fitHeight="100.0" fitWidth="120.0" layoutX="259.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="383.0" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="241.0" AnchorPane.topAnchor="102.0">
+               <image>
+                  <Image url="@images/icons8-medium_risk.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgNoVulnerable" fitHeight="100.0" fitWidth="120.0" layoutX="259.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="382.0" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="241.0" AnchorPane.topAnchor="103.0">
+               <image>
+                  <Image url="@images/icons8-low_risk.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgInfo" fitHeight="83.0" fitWidth="109.0" layoutX="268.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="389.0" AnchorPane.leftAnchor="268.0" AnchorPane.rightAnchor="249.0" AnchorPane.topAnchor="113.0">
+               <image>
+                  <Image url="@images/icons8-informative.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="txtReporte2" layoutX="15.0" layoutY="372.0" text="Posbiles causas:" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="txtReporte3" layoutX="14.0" layoutY="400.0" prefHeight="19.0" prefWidth="534.0" text="- Se alcanzó el máximo tiempo de espera (10 segundos)" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="txtReporte4" layoutX="14.0" layoutY="426.0" prefHeight="19.0" prefWidth="384.0" text="- Existe alguna protección HTTP en el sitio" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="txtReporte5" layoutX="87.0" layoutY="293.0" text="Consulte el reporte para mayor información" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="cargandoPanel" layoutX="10.0" layoutY="73.0" prefHeight="323.0" prefWidth="600.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="73.0">
+         <children>
+            <Label fx:id="ejecutandoTxt" alignment="CENTER" layoutX="100.0" layoutY="189.0" prefHeight="27.0" prefWidth="416.0" text="Ejecutando análisis">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <JFXProgressBar fx:id="progressBar" layoutX="1.0" layoutY="253.0" prefHeight="19.0" prefWidth="600.0" progress="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" />
+            <JFXButton fx:id="cancelarBtn" layoutX="252.0" layoutY="338.0" onMouseClicked="#onCancelarButtonClicked" style="-fx-background-color: green;" text="Cancelar" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="siguienteBtn" layoutX="249.0" layoutY="338.0" onMouseClicked="#onSiguienteButtonClicked" style="-fx-background-color: green;" text="Siguiente" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+         </children></AnchorPane>
+      <AnchorPane fx:id="reportePanel" layoutX="10.0" layoutY="73.0" prefHeight="585.0" prefWidth="600.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="73.0">
+         <children>
+            <Label layoutX="249.0" layoutY="4.0" text="Reporte">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="517.0" layoutY="546.0" onMouseClicked="#onInicioButtonClicked" prefHeight="28.0" prefWidth="69.0" style="-fx-background-color: grey;" text="Salir" textFill="WHITE" />
+            <Separator layoutY="36.0" prefHeight="9.0" prefWidth="600.0" AnchorPane.bottomAnchor="538.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+            <JFXButton layoutX="435.0" layoutY="547.0" style="-fx-background-color: green;" text="Imprimir" textFill="WHITE" visible="false" />
+            <AnchorPane layoutY="44.0" prefHeight="496.0" prefWidth="600.0">
+               <children>
+                  <GridPane gridLinesVisible="true" layoutX="141.0" layoutY="72.0" prefHeight="489.0" prefWidth="580.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="251.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="455.0" minWidth="10.0" prefWidth="329.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="41.0" minHeight="0.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="99.0" minHeight="0.0" prefHeight="24.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="143.0" minHeight="0.0" prefHeight="34.0" valignment="TOP" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="163.0" minHeight="4.0" prefHeight="34.0" valignment="TOP" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="193.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="227.0" minHeight="4.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="222.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="200.0" minHeight="9.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="146.0" minHeight="2.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="154.0" minHeight="3.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="116.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="txtReporteSitio" prefHeight="19.0" prefWidth="332.0" text=" www.example.com/exam.php?id=1" wrapText="true" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="11.0" />
+                           </font></Label>
+                        <Label prefHeight="19.0" prefWidth="252.0" style="-fx-background-color: white;" text=" Vulnerable:" textFill="#19891f" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Label style="-fx-background-color: white;" text=" Técnicas utilizadas:" textFill="#19891f" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Label style="-fx-background-color: white;" text=" Duración del análisis:" textFill="#19891f" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Label style="-fx-background-color: white;" text=" Administrador de base de datos:" textFill="#19891f" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Label fx:id="txtReporteVulnerable" text=" SI" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Label fx:id="txtReporteAtaque5" text="Ataque basado en consultas concatenadas (Stacked queries)" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="txtReporteDuracion" text=" 10:00:03" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Label style="-fx-background-color: white;" text=" Usuario de base de datos:" textFill="#19891f" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label style="-fx-background-color: white;" text=" Usuario es DBA?:" textFill="#19891f" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label style="-fx-background-color: white;" text=" Servidor de aplicaciones:" textFill="#19891f" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label style="-fx-background-color: white;" textFill="#19891f" GridPane.rowIndex="11">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label style="-fx-background-color: white;" text=" Tablas encontradas en el análisis:" textFill="#19891f" GridPane.rowIndex="12">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label underline="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <JFXTextArea fx:id="txtReportPayloads" editable="false" text="Type: boolean-based blind&#10;Title: AND boolean-based blind - WHERE or HAVING clause&#10;Payload: id=1' AND 7074=7074 AND 'UmSF'='UmSF&#10;Vector: AND [INFERENCE]&#10;&#10;Type: AND/OR time-based blind&#10;Title: MySQL &gt;= 5.0.12 AND time-based blind&#10;Payload: id=1' AND SLEEP(5) AND 'Aoyp'='Aoyp&#10;Vector: AND [RANDNUM]=IF(([INFERENCE]),SLEEP([SLEEPTIME]),[RANDNUM])&#10;&#10;Type: UNION query&#10;Title: Generic UNION query (NULL) - 11 columns&#10;Payload: id=1' UNION ALL SELECT NULL,NULL,CONCAT(0x717a7a6a71,0x704e5947574f6c76456b456e537653734a584568566f765971634e4f594e505a784d4242675a7152,0x7171717871),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL-- PWJt&#10;Vector:  UNION ALL SELECT NULL,NULL,[QUERY],NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL[GENERIC_SQL_COMMENT]" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <Label fx:id="txtReporteUsuario" text=" usuario@asjd" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtReporteUsuarioDba" text=" No" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtReporteServidor" text=" Apache 12.01.1" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <JFXTextArea fx:id="txtReportTables" prefHeight="26.0" prefWidth="307.0" text="SqliTabla{&#10; &#9;baseDeDatos='Database: 686841_caravan1', &#10; &#9;tabla='Table: tbl_menu', &#10; &#9;columnas=[8 columns]}, &#10;&#10; SqliTabla{&#10; &#9;baseDeDatos='Database: 686841_caravan1', &#10; &#9;tabla='Table: tbl_pages', &#10; &#9;columnas=[5 columns]}, &#10;&#10; SqliTabla{&#10; &#9;baseDeDatos='Database: 686841_caravan1', tabla='Table: tbl_video', columnas=[5 columns]}, SqliTabla{baseDeDatos='Database: 686841_caravan1', tabla='Table: tbl_photos', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: 686841_caravan1', tabla='Table: tbl_news', columnas=[7 columns]}, SqliTabla{baseDeDatos='Database: 686841_caravan1', tabla='Table: tbl_config', columnas=[3 columns]}, SqliTabla{baseDeDatos='Database: 686841_caravan1', tabla='Table: tbl_tour', columnas=[12 columns]}, SqliTabla{baseDeDatos='Database: 686841_caravan1', tabla='Table: tbl_slider', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: 686841_caravan1', tabla='Table: tbl_galleries', columnas=[7 columns]}, SqliTabla{baseDeDatos='Database: 686841_caravan1', tabla='Table: tbl_store', columnas=[12 columns]}, SqliTabla{baseDeDatos='Database: 686841_caravan1', tabla='Table: tbl_header_photos', columnas=[2 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: TABLESPACES', columnas=[9 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: ROUTINES', columnas=[31 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_SYS_INDEXES', columnas=[7 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_LOCKS', columnas=[10 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_SYS_FOREIGN', columnas=[5 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: COLLATION_CHARACTER_SET_APPLICABILITY', columnas=[2 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: COLUMN_PRIVILEGES', columnas=[7 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_CMP_PER_INDEX_RESET', columnas=[8 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_METRICS', columnas=[17 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: GLOBAL_VARIABLES', columnas=[2 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_MUTEXES', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_SYS_FOREIGN_COLS', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: PARTITIONS', columnas=[25 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_FT_INDEX_CACHE', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INDEX_STATISTICS', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: USER_PRIVILEGES', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: ENGINES', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: PARAMETERS', columnas=[16 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: TRIGGERS', columnas=[22 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_TABLESPACES_SCRUBBING', columnas=[8 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_BUFFER_POOL_STATS', columnas=[32 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_SYS_SEMAPHORE_WAITS', columnas=[22 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: SPATIAL_REF_SYS', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: TABLE_CONSTRAINTS', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: CHARACTER_SETS', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_SYS_COLUMNS', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: XTRADB_INTERNAL_HASH_TABLES', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_CMP_PER_INDEX', columnas=[8 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_BUFFER_PAGE_LRU', columnas=[20 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: SCHEMATA', columnas=[5 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: KEY_CACHES', columnas=[12 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: PLUGINS', columnas=[13 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: CLIENT_STATISTICS', columnas=[25 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_FT_INDEX_TABLE', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_CMPMEM', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: EVENTS', columnas=[24 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: USER_STATISTICS', columnas=[25 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_CMP_RESET', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: APPLICABLE_ROLES', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_SYS_TABLESPACES', columnas=[7 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: COLLATIONS', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: REFERENTIAL_CONSTRAINTS', columnas=[11 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: PROCESSLIST', columnas=[17 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: PROFILING', columnas=[18 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: XTRADB_READ_VIEW', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_CMP', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_SYS_TABLESTATS', columnas=[9 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_SYS_FIELDS', columnas=[3 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_LOCK_WAITS', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: COLUMNS', columnas=[20 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: FILES', columnas=[38 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: TABLES', columnas=[21 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: STATISTICS', columnas=[16 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_SYS_TABLES', columnas=[8 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_CHANGED_PAGES', columnas=[4 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: VIEWS', columnas=[11 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: TABLE_PRIVILEGES', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: KEY_COLUMN_USAGE', columnas=[12 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: SESSION_STATUS', columnas=[2 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_SYS_DATAFILES', columnas=[2 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: SYSTEM_VARIABLES', columnas=[14 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: SCHEMA_PRIVILEGES', columnas=[5 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: SESSION_VARIABLES', columnas=[2 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: XTRADB_RSEG', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: GLOBAL_STATUS', columnas=[2 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_FT_CONFIG', columnas=[2 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_TRX', columnas=[24 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_BUFFER_PAGE', columnas=[20 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: TABLE_STATISTICS', columnas=[5 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_TABLESPACES_ENCRYPTION', columnas=[10 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: GEOMETRY_COLUMNS', columnas=[13 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: INNODB_CMPMEM_RESET', columnas=[6 columns]}, SqliTabla{baseDeDatos='Database: information_schema', tabla='Table: ALL_PLUGINS', columnas=[13 columns]}]'}" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <Label style="-fx-background-color: white;" text=" Payloads" textFill="#19891f" GridPane.rowIndex="11">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtReporteDbms" text=" MySql" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="19.0" prefWidth="259.0" style="-fx-background-color: white;" text=" Sitio analizado:" textFill="#19891f">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXCheckBox fx:id="checkBoxAtaque1" disable="true" opacity="0.86" prefHeight="34.0" prefWidth="229.0" text="Ataque basado en booleanos (Boolean based)" wrapText="true" GridPane.rowIndex="3" />
+                        <JFXCheckBox fx:id="checkBoxAtaque4" disable="true" opacity="0.86" prefHeight="39.0" prefWidth="270.0" text="Ataque basado en consultas concatenadas (Stacked queries)" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <JFXCheckBox fx:id="checkBoxAtaque2" disable="true" opacity="0.86" prefHeight="37.0" prefWidth="213.0" text="Ataque basado en errores (Error based)" wrapText="true" GridPane.rowIndex="4" />
+                        <JFXCheckBox fx:id="checkBoxAtaque5" disable="true" opacity="0.86" prefHeight="44.0" prefWidth="274.0" text="Ataque basados en tiempos de respuesta (Time based blind)" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <JFXCheckBox fx:id="checkBoxAtaque3" opacity="0.86" prefHeight="67.0" prefWidth="233.0" text="Ataque basado en consultas 'UNION' (Union query based)" wrapText="true" GridPane.rowIndex="5" />
+                        <JFXCheckBox fx:id="checkBoxAtaque6" disable="true" opacity="0.86" text="Ataques basados en consultas en línea" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="acercaDePanel" layoutX="1.0" layoutY="73.0" prefHeight="585.0" prefWidth="600.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <JFXButton layoutX="271.0" layoutY="536.0" onMouseClicked="#onInicioButtonClicked" style="-fx-background-color: green;" text="Salir" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <JFXTextArea fx:id="acercaDeTxt" editable="false" layoutX="14.0" layoutY="51.0" prefHeight="477.0" prefWidth="576.0" style="-fx-background-color: white;" text="Autor:&#10;Juan Hernández Sánchez&#10;Instituto Politécnico Nacional&#10;Maestría en Ciencias en Informática&#10;UPIICSA&#10;2019&#10;" />
+            <ImageView fitHeight="132.0" fitWidth="92.0" layoutX="155.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logoipn-negro.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="132.0" fitWidth="109.0" layoutX="333.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/upiicsa.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="14.0" layoutY="14.0" text="Información de este software">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="urlSinParametrosPanel" layoutX="10.0" layoutY="83.0" prefHeight="327.0" prefWidth="600.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="73.0">
+         <children>
+            <JFXTextField fx:id="urlTextField1" alignment="CENTER" editable="false" layoutX="53.0" layoutY="315.0" opacity="0.71" prefHeight="35.0" prefWidth="497.0" promptText="https://www.example.com/foo.php?ID=1" unFocusColor="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="btnContinuarAnalisis" buttonType="RAISED" layoutX="153.0" layoutY="428.0" onMouseClicked="#onContinuarAnalisisClicked" style="-fx-background-color: green;" text="Continuar" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnCancelarAnalisis" buttonType="RAISED" layoutX="368.0" layoutY="428.0" onMouseClicked="#onCancelarButtonClicked" style="-fx-background-color: grey;" text="Cancelar" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXTextArea layoutX="34.0" layoutY="142.0" prefHeight="131.0" prefWidth="534.0" text="La URL que ingresó NO contiene un parámetro inyectable, puede hacer click en  'Continuar' si desea analizar todos los recursos de la dirección ingresada (web crawling). &#10;&#10;ATENCIÓN: Esta opción puede tardar varios minutos">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXTextArea>
+            <ImageView fitHeight="89.0" fitWidth="100.0" layoutX="256.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-informative.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
